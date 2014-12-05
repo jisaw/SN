@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chicago Crime Fact Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <center>
+    <div class="container">
+      <div class="jumbotron">
+      <h1>Welcome to Jake and Doan's MIS 407 Project!</h2>
+      <br>
+      <p> Here's your randomly generated fact about crime in Chicago, IL<br>This fact is figured out of a random sample of 1000 crimes in the last 13 years</p>
+          <div class ="btn-group btn-group-lg" role="group" aria-label="index buttons">
+          <button type="button" class="btn btn-default" onclick="location.href = '/';">Home</button>
+          <button type="button" class="btn btn-default" onclick = "location.href = '/fact';">Another Fact</button>
+      </div>
+      </center>
+    </div>
+    </div>
+    <center>
+    <div class="container">
+        <div class="well">
+<h1>{{ fact }}</h1>
+<br>
+{% if graph %}
+<img src="{{ url_for('mypng', num = graph)}}"/>
+{% else %}
+{% endif %}
+        </div>
+    </div>
+    <center>
+  </body>
+</html>

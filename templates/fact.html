@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style type="text/css">
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+body {
+  background-image: url("/static/chiflagbackground.png");
+  }
+    </style>
     <title>Chicago Crime Fact Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="static/bootstrap.css" rel="stylesheet" media="screen">
   </head>
   <body>
     <center>
@@ -13,8 +22,8 @@
       <br>
       <p> Here's your randomly generated fact about crime in Chicago, IL<br>This fact is figured out of a random sample of 1000 crimes in the last 13 years</p>
           <div class ="btn-group btn-group-lg" role="group" aria-label="index buttons">
-          <button type="button" class="btn btn-default" onclick="location.href = '/';">Home</button>
-          <button type="button" class="btn btn-default" onclick = "location.href = '/fact';">Another Fact</button>
+          <button type="button" class="btn btn-default" onclick="location.href = '/';">Go Home</button>
+          <button type="button" class="btn btn-default" onclick = "location.href = '/fact';">New Fact</button>
       </div>
       </center>
     </div>
@@ -24,8 +33,12 @@
         <div class="well">
 <h1>{{ fact }}</h1>
 <br>
-{% if graph %}
-<img src="{{ url_for('mypng', num = graph)}}"/>
+{% if graph == 1 %}
+<img src="/static/figure1.png"/>
+{% elif graph == 3 %}
+<img src="/static/figure3.png"/>
+{% elif graph == 4 %}
+<img src="/static/figure2.png"/>
 {% else %}
 {% endif %}
         </div>

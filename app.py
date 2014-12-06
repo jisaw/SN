@@ -28,6 +28,11 @@ def fact():
 		return render_template('fact.html', fact=facts[fact_num])
 	if fact_num == 1:
 		return render_template('fact.html', fact=facts[fact_num], graph=1)
+	if fact_num == 3:
+		return render_template('fact.html', fact=facts[fact_num], graph=3)
+	if fact_num == 4:
+		return render_template('fact.html', fact=facts[fact_num], graph=4)
+
 
 @app.route('/mypng')
 def mypng(graph):

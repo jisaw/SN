@@ -90,51 +90,9 @@ def location_graph():
     
     return make_dict_bar_graph(locationCount)
 
-def main():
-    print "Welcome to our MIS 407 project!"
-    time.sleep(7)
-    print("This is a little story about crime in the city of Chicago IL")
-    time.sleep(7)
-    print("This story is special though because it is automated!")
-    time.sleep(7)
-    print "The data and figures used in this story are calculated from a random grouping of 1000 crimes that happened in Chicago over the last year"
-    time.sleep(7)
-    print "This set of data is different every time you run this script"
-    time.sleep(7)
-    print "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-    time.sleep(7)
-  
-    time.sleep(7)
-    
-    time.sleep(7)
-
-    
-
-
-    time.sleep(7)
-    
-    
-    time.sleep(7)
-    print "It's also interesting to note that the neighboring communities also have a consistent crime rate."
-    time.sleep(7)
-    
-    locationCount = Counter(df['location_description'])
-    
-    make_dict_bar_graph(locationCount)
-    
-    print "Now as you can see, a majority of these crimes appear to occur mostly in the streets, followed by residence and apartments.\n"
-    time.sleep(7)
-
-    print "To end this story I would like to leave you to play with our very own interactive map of Chicago Crime"
-    time.sleep(7)
-    current_dir = os.getcwd()
-    webbrowser.open('file://%s/chiCrimesCircles.html' % current_dir)
 
 def make_dict_bar_graph(data):
     plt.bar(range(len(data)), data.values())
     plt.xticks(range(len(data)), data.keys(), rotation=90)
     matplotlib.rc('xtick', labelsize=9)
     return plt
-
-if __name__ == "__main__":
-    main()
